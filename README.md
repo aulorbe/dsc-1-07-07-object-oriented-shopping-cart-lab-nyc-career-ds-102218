@@ -2,7 +2,7 @@
 # Object Oriented Shopping Cart - Lab
 
 ## Introduction
-In this lab we will be mimicing the functionality of a shopping cart with our knowledge of object oriented Python. Our shopping cart will be able to add items of different quantities and prices to our cart, calculate discounts, keep track of what items have been added, and void transactions.
+In this lab we will be mimicking the functionality of a shopping cart with our knowledge of object oriented Python. Our shopping cart will be able to add items of different quantities and prices to our cart, calculate discounts, keep track of what items have been added, and void transactions.
 
 ## Objectives
 
@@ -14,7 +14,7 @@ You will be able to:
 
 ## Instructions
 
-We will need to build a ShoppingCart class that creates a shopping cart with a total (`_total`) which starts at `0`, an empty list of items (`_items`), and an optional employee discount (`_employee_discount`). 
+We will need to build a ShoppingCart class that creates a shopping cart with a total (`_total`) which starts at `0`, an empty list of items (`_items`), and an optional employee discount (`_employee_discount`).
 
 > **Hint:** if there is no employee discount present, this might be a good opportunity to use the datatype `None` as a default value.
 
@@ -57,7 +57,7 @@ shopping_cart.add_item("agyle socks", 10.50) # 56.49
 shopping_cart.add_item("jeans", 50.00, 3) # 206.49
 ```
 
-We have been spending a lot the past few weeks and are getting a lot of buyer's remorse. Let's see if we can play around with the math to justify our purchases to ourselves. Let's define two instance methods: `mean_item_price` and `median_item_price`, which should return the average price per item and the median price of the items in your cart, respectively. 
+We have been spending a lot the past few weeks and are getting a lot of buyer's remorse. Let's see if we can play around with the math to justify our purchases to ourselves. Let's define two instance methods: `mean_item_price` and `median_item_price`, which should return the average price per item and the median price of the items in your cart, respectively.
 
 > **Remember:** the mean is the average price per item and to find the median we must do three things:
 * First put all numbers in our list in ascending order (smallest to greatest)
@@ -91,11 +91,11 @@ print(discount_shopping_cart.apply_discount()) # 848.00
 print(shopping_cart.apply_discount()) # Sorry, there is no discount to apply to your cart :(
 ```
 
-Great, we have a way to add items, view our total, and apply discounts. We now want to be able to view a list of all items in our cart. Let's define an instance method called `item_names` which returns a list of names which represent each item we have in our cart -- if there are three socks the list should contain three `"socks"`. 
+Great, we have a way to add items, view our total, and apply discounts. We now want to be able to view a list of all items in our cart. Let's define an instance method called `item_names` which returns a list of names which represent each item we have in our cart -- if there are three socks the list should contain three `"socks"`.
 
 
 ```python
-shopping_cart.item_names() 
+shopping_cart.item_names()
 # ["rainbow sandals", "argyle socks", "jeans", "jeans", "jeans"]
 ```
 
@@ -108,4 +108,4 @@ shopping_cart.total # 156.49
 ```
 
 ## Summary
-In this lab, we practiced using instance methods to mimic the functionality of a shopping cart as well as defined methods that give us the mean and median prices of all the items in our cart. 
+In this lab, we practiced using instance methods to mimic the functionality of a shopping cart as well as defined methods that give us the mean and median prices of all the items in our cart.
