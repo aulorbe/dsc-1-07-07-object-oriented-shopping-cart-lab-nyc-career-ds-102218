@@ -77,5 +77,18 @@ class ShoppingCart:
                 print('you have an even number of items in your cart! find the mean instead!')
 
 
-    def mean_item_price(self): #return mean price per item
-        pass
+    def mean_item_price(self):
+            import statistics
+
+            item_prices = []
+            for i in self._items:
+                item_prices.append(i['price'])
+
+            sorting = sorted(item_prices)
+
+            if len(sorting) % 2 != 0:
+                print('you have an odd number of items in your cart! find the median instead!')
+            else:
+                mean = statistics.mean(sorting)
+                rounded = round(mean,2)
+                print(rounded)
