@@ -57,30 +57,25 @@ class ShoppingCart:
 
         return sum(total)
 
-# Finally, if there is an even number of elements in the list, the median will be the average or mean of the two center elements
-#  (e.g. given the list [1,2,3,4] the elements 2 and 3 are the two center elements and the median would be (2 + 3)/2 or 2.5).
+# self._items is a list of dictionaries and looks like:
+# [{'item_name': 'eggs', 'price': 5, 'quantity': 10}, {'item_name': 'milk', 'price': 10, 'quantity': 2}]
 
-    def median_item_price(self,item_name,price,quantity=None):
-        import statistics #return average price per item
-        item = {'item_name': item_name, 'price': price, 'quantity': quantity}
-        self._items.append(item)
+    def median_item_price(self):
+            import statistics
 
-         # self._items is a list of dictionaries and looks like:
-         # [{'item_name': 'eggs', 'price': 5, 'quantity': 10}, {'item_name': 'milk', 'price': 10, 'quantity': 2}]
+            item_prices = []
+            for i in self._items:
+                item_prices.append(i['price']) #putting all prices into a list
 
-        sorting = sorted(self._items,key = lambda i:  i['price']) #sorting my list of dictionaries (self._items) in ascending order
+            sorting = sorted(item_prices) #sorting my list of dictionaries (self._items) in ascending order
 
-        item_prices = []
-        for i in sorting:
-            item_prices.append(i['price'])
-
-        # Then check to see if there is an odd number of elements in our list. If so, the middle number is the median
-        if len(item_prices) % 2 != 0: #if there is an odd number of items in your cart...
-            median = statistics.median(item_prices)
-            print(median)
-        else:
-            print('you have an even number of items in your cart! find the mean instead!')
+            # Then check to see if there is an odd number of elements in our list. If so, the middle number is the median
+            if len(sorting) % 2 != 0:
+                median = statistics.median(sorting)
+                print(median)
+            else:
+                print('you have an even number of items in your cart! find the mean instead!')
 
 
-    def mean_item_price(self): #return median price per item
+    def mean_item_price(self): #return mean price per item
         pass
