@@ -56,3 +56,26 @@ class ShoppingCart:
                 total.append(i['price']*i['quantity'])
 
         return sum(total)
+
+# First put all numbers in our list in ascending order (smallest to greatest)
+# Then check to see if there is an odd number of elements in our list. If so, the middle number is the median
+# Finally, if there is an even number of elements in the list, the median will be the average or mean of the two center elements
+#  (e.g. given the list [1,2,3,4] the elements 2 and 3 are the two center elements and the median would be (2 + 3)/2 or 2.5).
+
+    def mean_item_price(self,item_name,price,quantity=None):
+        import operator #return average price per item
+        item = {'item_name': item_name, 'price': price, 'quantity': quantity}
+        self._items.append(item)
+
+         # self._items is a list of dictionaries and looks like:
+         # [{'item_name': 'eggs', 'price': 5, 'quantity': 10}, {'item_name': 'milk', 'price': 10, 'quantity': 2}]
+
+        sorting = sorted(self._items,key = lambda i:  i['price']) #sorting my list of dictionaries (self._items) in ascending order
+
+        return sorting
+
+
+
+
+    def median_item_price(self): #return median price per item
+        pass
