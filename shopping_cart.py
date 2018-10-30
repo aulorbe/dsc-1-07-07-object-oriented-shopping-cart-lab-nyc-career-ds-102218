@@ -48,14 +48,17 @@ class ShoppingCart:
     def add_item(self,item_name,price,quantity=None):
         item = {'item_name': item_name, 'price': price, 'quantity': quantity}
         self._items.append(item)
-        total = []
-        for i in self._items:
-            if i['quantity'] == None:
-                total.append(i['price']*1)
-            else:
-                total.append(i['price']*i['quantity'])
 
-        return sum(total)
+        self.total = 0
+
+        for i in self._items:
+            if i['quantity'] != None:
+                price = i['price'] * i['quantity']
+                self.total += price
+            else:
+                self.total += i['price']
+
+        return self.total
 
 # self._items is a list of dictionaries and looks like:
 # [{'item_name': 'eggs', 'price': 5, 'quantity': 10}, {'item_name': 'milk', 'price': 10, 'quantity': 2}]
